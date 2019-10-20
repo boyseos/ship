@@ -79,9 +79,15 @@ auth =(()=>{
 		$.getScript(auth_vue_js).done(()=>{
 			alert('겟스크립트 진입')
 			setContentView()
-			$('#a_go_join').click(()=>{
-				join()
-			})	
+			// <div id="a_login_href"></div>'+
+			$('<a>',{
+				text : '회원가입 이동',
+				href : '#',
+				click : () =>{
+					join()
+				}
+			})
+			.appendTo('#a_go_join')
 		})
 
 	}

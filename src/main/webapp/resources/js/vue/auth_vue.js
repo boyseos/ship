@@ -12,7 +12,7 @@ auth_vue = (()=>{
 			'  <input type="text" id="upw" class="form-control" placeholder="Password" required="">'+
 			'  <div class="checkbox mb-3">'+
 			'    <label>'+
-			'      <a id="a_go_join" href="#">좋은말할때 와라.</a>'+
+			'      <div id="a_go_join"></div>'+
 			'    </label>'+
 			'  </div>'+
 			'  <div id="a_login_button"></div>'+
