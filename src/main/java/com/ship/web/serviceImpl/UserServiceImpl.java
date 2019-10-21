@@ -14,13 +14,13 @@ public class UserServiceImpl implements UserService{
 	@Autowired UserMapper userMapper;
 	
 	@Override
-	public boolean joinEmp(UserDTO param) {
-		return true;
+	public void join(UserDTO param) {
+		userMapper.insertUser(param);
 	}
 
 	@Override
-	public UserDTO loginEmp(UserDTO param) {
-		return userMapper.selectByEmpnoEname(param);
+	public UserDTO login(UserDTO param) {
+		return userMapper.selectUserById(param);
 	}
 
 	@Override

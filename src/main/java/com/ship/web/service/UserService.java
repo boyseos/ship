@@ -8,8 +8,8 @@ import com.ship.web.domains.UserDTO;
 @Component
 public interface UserService {
 
-	public boolean joinEmp(UserDTO param);
-	public UserDTO loginEmp(UserDTO param);
+	public void join(UserDTO param);
+	public UserDTO login(UserDTO param);
 	public List<UserDTO> findAllDept();
 	public int countUser();
 }

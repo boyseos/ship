@@ -117,7 +117,7 @@ auth_vue = (()=>{
 		'            <div class="input-group-prepend">'+
 		'              <span class="input-group-text">@</span>'+
 		'            </div>'+
-		'            <input type="text" class="form-control" id="username" placeholder="Username" required="">'+
+		'            <input type="text" class="form-control" id="uname" placeholder="Username" required="">'+
 		'            <div class="invalid-feedback" style="width: 100%;">'+
 		'              Your username is required.'+
 		'            </div>'+
@@ -125,7 +125,7 @@ auth_vue = (()=>{
 		'        </div>'+
 		''+        '<div class="mb-3">'+
 		'          <label for="email">Email <span class="text-muted">(Optional)</span></label>'+
-		'          <input type="email" class="form-control" id="email" placeholder="you@example.com">'+
+		'          <input type="text" class="form-control" id="age" placeholder="you@example.com">'+
 		'          <div class="invalid-feedback">'+
 		'            Please enter a valid email address for shipping updates.'+
 		'          </div>'+

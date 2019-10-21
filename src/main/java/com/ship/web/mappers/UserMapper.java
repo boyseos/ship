@@ -6,8 +6,8 @@ import com.ship.web.domains.UserDTO;
 import org.springframework.stereotype.Repository;
 @Repository
 public interface UserMapper {
-	public boolean insertEmp(UserDTO param);
-	public UserDTO selectByEmpnoEname(UserDTO param);
+	public void insertUser(UserDTO param);
+	public UserDTO selectUserById(UserDTO param);
 	public List<UserDTO> findByDeptTable();
 	public int countUser();
 }

@@ -21,24 +21,24 @@ public class UserController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(UserController.class);
 	@Autowired UserServiceImpl userService;
-
+	@Autowired UserDTO user;
+	
 	@PostMapping("/join")
-	public @ResponseBody Map<?,?> join(@RequestBody UserDTO user) {
-		logger.info("조인 아이디{}",user.getuId() +", "+user.getuPw());
+	public @ResponseBody Map<?,?> join(@RequestBody UserDTO param) {
+		logger.info("조인 아이디{}",param.getUid() +", "+param.getUpw());
 		Map<String,String> map = new HashMap<>();
-		map.put("uId",user.getuId());
-		map.put("uPw",user.getuPw());
-		logger.info("맵에 담긴 아이디와 비번{}",map.get("uId")+","+map.get("uPw"));
+		map.put("uid",param.getUid());
+		map.put("upw",param.getUpw());
+		logger.info("맵에 담긴 아이디와 비번{}",map.get("uid")+","+map.get("upw"));
+		userService.join(param);
 		return map;
 	}
 	
 	@PostMapping("/login")
-	public @ResponseBody Map<?,?> login(@RequestBody UserDTO user) {
-		logger.info("AJAX 가 보낸 아이디{}",user.getuId() +", "+user.getuPw());
-		Map<String,String> map = new HashMap<>();
-		map.put("uId",user.getuId());
-		map.put("uPw",user.getuPw());
-		logger.info("로그인 아이디와 비번{}",map.get("uId")+","+map.get("uPw"));
-		return map;
+	public @ResponseBody UserDTO login(@RequestBody UserDTO param) {
+		logger.info("AJAX 가 보낸 아이디{}",param.getUid() +", "+param.getUpw());
+		user = userService.login(param);
+		logger.info("사용자 정보{}",userService.login(param).toString());
+		return user;
 	}
 }
